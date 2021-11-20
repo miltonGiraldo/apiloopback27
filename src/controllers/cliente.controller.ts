@@ -19,7 +19,9 @@ import {
 } from '@loopback/rest';
 import {Cliente} from '../models';
 import {ClienteRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate("admin")
 export class ClienteController {
   constructor(
     @repository(ClienteRepository)
